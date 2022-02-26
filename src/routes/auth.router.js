@@ -6,10 +6,10 @@ const service = new AuthService()
 
 const passport = require('passport')
 
-//handler
-const validatorHandler = require('./../middlewares/validator.handler')
-//schemas validations
-const { recoveryUserPassword } = require('./../schemas/user.schema')
+// //handler
+// const validatorHandler = require('./../middlewares/validator.handler')
+// //schemas validations
+// const { recoveryUserPassword } = require('./../schemas/user.schema')
 
 
 // login

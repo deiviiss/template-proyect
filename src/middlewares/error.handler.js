@@ -8,10 +8,13 @@ function logErrors(err, req, res, next) {
 
 //crea un formato para devolver al cliente, detiene el código
 function errorHandler(err, req, res, next) {
-  res.status(500).json({
-    message: err.message,
-    stack: err.stack
-  })
+  if (err) {
+    res.status(500).json({
+      message: err.message,
+      stack: err.stack
+    })
+  }
+  next(err)
 }
 
 // error boom

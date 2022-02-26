@@ -21,7 +21,7 @@ router.get('/',
 
   checkRoles('admin'),
 
-  async (req, res) => {
+  async (req, res, next) => {
     try {
       const users = await service.find()
 
@@ -40,7 +40,7 @@ router.post('/',
 
   validatorHandler(createUserSchema, 'body'),
 
-  async (req, res) => {
+  async (req, res, next) => {
     try {
       const body = req.body
       const newUser = await service.create(body)

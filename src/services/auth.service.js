@@ -21,7 +21,6 @@ class AuthService {
     const isMatch = await bcrypt.compare(password, user.password)
 
     if (!isMatch) {
-      console.log('no macht');
       throw boom.unauthorized()
     }
 

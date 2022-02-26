@@ -1,7 +1,6 @@
 
 const boom = require('@hapi/boom')
 const bcrypt = require('bcrypt')
-const { array } = require('joi')
 
 //models - conection to bd
 const { models } = require('./../libs/sequelize')
