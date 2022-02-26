@@ -4,7 +4,7 @@ services:
   postgres:
     image: postgres:13
     environment:
-      - POSTGRES_DB=my_store
+      - POSTGRES_DB=dbemotions
       - POSTGRES_USER=root
       - POSTGRES_PASSWORD=admin123
     ports:
@@ -23,7 +23,7 @@ services:
   mysql:
     image: mysql:5
     environment:
-      - MYSQL_DATABASE=my_store
+      - MYSQL_DATABASE=dbemotions
       - MYSQL_ROOT_PASSWORD=admin123
       - MYSQL_PORT=3306
     ports:
