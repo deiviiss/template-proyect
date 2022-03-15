@@ -59,7 +59,8 @@ class AuthService {
     const token = jwt.sign(payload, config.jwtRecoveryPassword, { expiresIn: '15min' })
 
     const link = `http://${config.dbHost}/recovery?token=${token}`
-
+    console.log('token');
+    console.log(token);
     await service.update(user.userId, { recoveryToken: token })
 
     const mail = {

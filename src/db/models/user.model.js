@@ -39,7 +39,6 @@ const UserSchema = {
     field: 'create_at',
     defaultValue: Sequelize.NOW
   },
-  //! descomentar cuando se cree la columna de recovery, esta afectan la búsqueda en sequelize, comentar si no existe la columna recovery_token
   recoveryToken: {
     field: 'recovery_token',
     allowNull: true,
@@ -49,9 +48,9 @@ const UserSchema = {
 
 //contains the User model
 class User extends Model {
-  // static associate(models) {
-  // this.hasOne(models.Customer, { as: 'customer', foreignKey: 'userId' })
-  //}
+  static associate(models) {
+    this.hasOne(models.Thought, { as: 'thought', foreignKey: 'userId' })
+  }
   static config(sequelize) {
     return {
       sequelize,

@@ -28,7 +28,7 @@ class UserService {
 
     const data = await models.User.findAll(
       {
-        // include: ['customer']
+        // include: ['thought']
       }
     )
 
