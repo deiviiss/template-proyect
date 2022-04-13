@@ -1,13 +1,16 @@
 const express = require('express');
 const routerApi = require('./routes/index');
 const app = express()
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 4000
+const cors = require("cors");
 
 //errors
 const { logErrors, ormErrorHandler, errorHandler, boomErrorHandler } = require('./middlewares/error.handler')
 
 //middlewares
 app.use(express.json())
+
+app.use(cors());
 
 //errors
 app.use(logErrors)
