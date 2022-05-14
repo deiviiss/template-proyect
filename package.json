@@ -30,6 +30,7 @@
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",
     "sequelize": "^6.16.1",
+    "morgan": "^1.10.0",
     "sequelize-cli": "^6.4.1"
   },
   "devDependencies": {
@@ -37,7 +38,6 @@
     "eslint": "^8.1.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
-    "morgan": "^1.10.0",
     "prettier": "^2.4.1"
   }
 }
