@@ -42,6 +42,7 @@ router.post('/',
 
   async (req, res, next) => {
     try {
+
       const data = {
         ...req.body,
         userId: req.user.sub
@@ -77,7 +78,7 @@ router.get('/:thoughtId',
     }
   }
 )
-
+//edit thought by id
 router.patch('/:thoughtId',
 
   passport.authenticate('jwt', { session: false }),
@@ -102,6 +103,7 @@ router.patch('/:thoughtId',
   }
 )
 
+//delete thought by id
 router.delete('/:thoughtId',
 
   passport.authenticate('jwt', { session: false }),

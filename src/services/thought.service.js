@@ -11,31 +11,24 @@ class ThoughtService {
 
   //service methods
 
-  //create Thought
+  //create thought
   async create(data) {
     // const newThought = await models.Thought.create({
     //   ...body, //clona el objeto data
     // })
-
-    console.log(data);
     const newThought = await models.Thought.create(data)
 
     return newThought
   }
 
-  //get all Thoughts
+  //get all thoughts
   async find() {
 
     const data = await models.Thought.findAll(
       {
-        include: ['user']
+        include: ['user', 'emotion']
       }
     )
-
-
-    // for (let i = 0; i < data.length; i++) {
-    //   delete data[i].dataValues.password
-    // }
 
     for (let i = 0; i < data.length; i++) {
       delete data[i].dataValues.user.dataValues.password
@@ -45,6 +38,7 @@ class ThoughtService {
     return data
   }
 
+  //get thought by Id
   async findOne(thoughtId) {
 
     const thought = await models.Thought.findByPk(thoughtId)
@@ -56,6 +50,7 @@ class ThoughtService {
     return thought
   }
 
+  //update thought
   async update(thoughtId, changes) {
     const thought = await this.findOne(thoughtId)
 
@@ -64,6 +59,7 @@ class ThoughtService {
     return { message: 'Update success' }
   }
 
+  //delete thought
   async delete(thoughtId) {
     const thought = await this.findOne(thoughtId)
     await thought.destroy()

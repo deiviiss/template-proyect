@@ -2,6 +2,7 @@
 const { THOUGHT_TABLE } = require('../models/thought.model')
 const { DataTypes, Sequelize } = require('sequelize')
 const { USER_TABLE } = require('../models/user.model')
+const { EMOTION_TABLE } = require('../models/emotion.model')
 
 module.exports = {
   up: async (queryInterface) => {
@@ -25,15 +26,15 @@ module.exports = {
         field: 'create_at',
         defaultValue: Sequelize.NOW
       },
-      // emotionId: {
-      //   field: 'emotion_id',
-      //   allowNull: false,
-      //   type: DataTypes.INTEGER,
-      //   references: { //relacion foreign key
-      //     model: EMOTION_TABLE, //nombre de la tabla
-      //     key: 'emotion_id'//llave
-      //   }
-      // },
+      emotionId: {
+        field: 'emotion_id',
+        allowNull: false,
+        type: DataTypes.INTEGER,
+        references: { //relacion foreign key
+          model: EMOTION_TABLE, //nombre de la tabla
+          key: 'emotion_id'//llave
+        }
+      },
       userId: {
         field: 'user_id',
         allowNull: false,
