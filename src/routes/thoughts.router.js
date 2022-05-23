@@ -23,6 +23,7 @@ router.get('/',
 
   async (req, res, next) => {
     try {
+
       const thoughts = await service.find()
 
       res.status(200).json(thoughts)

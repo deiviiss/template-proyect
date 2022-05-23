@@ -8,7 +8,8 @@ const setupModels = require('./../db/models/index')
 const URI = config.dbUrl
 
 const options = {
-  dialect: 'mysql'
+  dialect: 'mysql',
+  timezone:"-06:00"
 }
 
 if (config.isProd) {
