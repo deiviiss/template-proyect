@@ -12,13 +12,15 @@ const { logErrors, ormErrorHandler, errorHandler, boomErrorHandler } = require('
 app.use(express.json())
 app.use(morgan('dev')); //message server
 
+// const corsOptions = { origin: "http://frontend.com" };
+
 app.use(cors());
 
 //errors
-app.use(logErrors)
+app.use(logErrors) //any errors
 app.use(ormErrorHandler) //orm errors
+app.use(errorHandler) // send error to client
 app.use(boomErrorHandler) //boom errors
-app.use(errorHandler) //any errors
 
 //auth LocalStrategy
 require('./utils/auth')

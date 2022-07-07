@@ -23,7 +23,7 @@ router.post('/login',
       const user = req.user
 
       const rta = await service.singToken(user)
-console.log(rta);
+
       res.json(rta)
 
     } catch (error) {

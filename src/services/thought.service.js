@@ -44,7 +44,7 @@ class ThoughtService {
     const thought = await models.Thought.findByPk(thoughtId)
 
     if (!thought) {
-      throw boom.notFound('Thought not found, sorry')
+      throw boom.notFound('Thought no encontrado, lo siento')
     }
 
     return thought

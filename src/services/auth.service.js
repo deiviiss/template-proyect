@@ -32,7 +32,7 @@ class AuthService {
   async singToken(user) {
 
     const jwtConfig = {
-      expiresIn: '7d'
+      expiresIn: '15m'
     }
 
     const payload = {
