@@ -26,8 +26,11 @@ class ThoughtService {
 
     const data = await models.Thought.findAll(
       {
-        include: ['user', 'emotion']
-      }
+        include: ['user', 'emotion'],
+        order: [
+          ['createAt', 'DESC'],
+        ]
+      },
     )
 
     for (let i = 0; i < data.length; i++) {
